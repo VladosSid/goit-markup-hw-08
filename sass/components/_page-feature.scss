@@ -1,0 +1,41 @@
+// ------ Особенности
+.feature {
+  padding-top: 94px;
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    margin-right: calc(-1 * $card-set-gap);
+  }
+
+  &__items {
+    flex-basis: calc(100% / 4 - $card-set-gap);
+    margin-right: $card-set-gap;
+  }
+
+  &__container-icon {
+    margin-bottom: $card-set-gap;
+    padding: 25px 100px;
+
+    background-color: getColor('font-filter');
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: getColor('secondary-text');
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
