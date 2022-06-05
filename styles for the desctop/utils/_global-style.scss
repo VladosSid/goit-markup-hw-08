@@ -25,60 +25,30 @@ p {
 %logo-style-text {
   font-family: $fontLogo;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 1.16;
+  font-size: 26px;
+  line-height: 1.2;
   text-decoration: none;
-
-  @media screen and (min-width: $desktop) {
-    font-size: 26px;
-    line-height: 1.19;
-  }
 }
 
 // ------ ГЛОБАЛЬНЫЕ ПАДИНГИ ДЛЯ СЕКЦИЙ плейсхолдер
-%section-mobail-tablet {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-%section-desktop {
+%section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
 .title-style {
   font-weight: 700;
-  font-size: 28px;
-  line-height: 1.17;
+  font-size: 36px;
+  line-height: 1.2;
   text-align: center;
-  margin-bottom: 30px;
-
-  @media screen and (min-width: $desktop) {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 50px;
-  }
+  margin-bottom: 50px;
 }
 
 .container {
+  width: 1200px;
+  margin: 0px auto;
   padding-right: 15px;
   padding-left: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  outline: 1px dashed red;
-
-  @media screen and (min-width: $mobail) {
-    width: 480px;
-  }
-  @media screen and (min-width: $tablet) {
-    width: 768px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: 1200px;
-  }
 }
 
 /* сброс отсутпов и точек в списках */

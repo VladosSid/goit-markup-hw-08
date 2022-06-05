@@ -1,21 +1,29 @@
+// --------- Наша команда
 .team {
-  @extend %section-mobail-tablet;
+  @extend %section;
   background-color: #f5f4fa;
 
+  &__list {
+    display: flex;
+    margin-right: calc(-1 * $card-set-gap);
+  }
+
   &__card {
-    margin-bottom: $card-set-gap;
+    flex-basis: calc(100% / 4 - $card-set-gap);
+    margin-right: $card-set-gap;
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
-    background-color: getColor('global-bacground');
+    background-color: getColor('white-text');
   }
 
   &__block-description {
-    padding-bottom: 24px;
+    padding-bottom: 30px;
     padding-top: 30px;
-    text-align: center;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   &__name {
@@ -24,19 +32,22 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
+
+    text-align: center;
   }
+
   &__profesion {
     margin-bottom: 16px;
 
     font-size: 16px;
     line-height: 1.2;
+    text-align: center;
 
     color: getColor('secondary-text');
   }
 
   &__social-network-list {
     display: flex;
-    justify-content: center;
   }
 
   &__social-network:not(:last-child) {

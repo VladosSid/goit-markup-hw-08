@@ -10,13 +10,7 @@
 .form__label {
   @include positioning();
 
-  &:hover .form__name,
-  &:focus .form__name {
-    color: getColor('accent');
-  }
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
 }
 
 .form__name {
@@ -24,12 +18,10 @@
   margin-bottom: 4px;
 
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.2;
   letter-spacing: 0.01em;
 
   color: getColor('secondary-text');
-
-  transition: color $timing-function-cubic;
 }
 
 .form__input {
@@ -50,11 +42,6 @@
     outline: none;
   }
 
-  &:hover .form__name,
-  &:focus .form__name {
-    color: getColor('accent');
-  }
-
   &:hover + .form__icon,
   &:focus + .form__icon {
     fill: getColor('accent');
@@ -70,6 +57,7 @@
 }
 
 .form__comment {
+  display: flex;
   width: 100%;
 
   resize: none;
@@ -101,8 +89,8 @@
   display: flex;
   align-items: center;
 
-  font-size: 12px;
-  line-height: 1.16;
+  font-size: 14px;
+  line-height: 1.7;
 
   color: getColor('secondary-text');
 }
@@ -139,13 +127,18 @@
   width: 16px;
   height: 15px;
 
-  margin-right: 8px;
+  margin-right: 7px;
 
   border: 2px solid getColor('primery-text');
   border-radius: 2px;
 
   transition: border-color $timing-function-cubic, background $timing-function-cubic;
 }
+
+// .form__block-treaty {
+//   position: relative;
+//   margin-left: 5px;
+// }
 
 .form__modal-treaty {
   margin-left: 4px;

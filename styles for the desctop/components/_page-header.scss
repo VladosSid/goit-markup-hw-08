@@ -1,0 +1,102 @@
+// ----------- Шапка сайта
+.header {
+  border-bottom: 1px solid rgba(236, 236, 236, 1);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+// --------- Навигация
+.navigation {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    margin-right: 93px;
+    @extend %logo-style-text;
+
+    color: getColor('logo');
+  }
+
+  &__logo-accent {
+    color: getColor('accent');
+  }
+}
+
+// -------------- Меню
+.navigation__menu,
+.contacts {
+  display: flex;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+
+  list-style-type: none;
+}
+
+.navigation__item:not(:last-child),
+.contacts__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.navigation__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: getColor('primary-text');
+  text-decoration: none;
+
+  transition: color $timing-function-cubic;
+
+  &:hover,
+  &:focus {
+    color: getColor('accent');
+  }
+
+  &--carrent {
+    color: getColor('accent');
+    @include positioning();
+  }
+
+  &--carrent::after {
+    content: '';
+    display: block;
+    @include positioning(absolute);
+
+    width: 100%;
+    height: 4px;
+    bottom: -1px;
+    right: 0;
+
+    border-radius: 4px;
+    background: getColor('accent');
+  }
+}
+
+// ----------- Контакты
+.contacts__mail,
+.contacts__tell {
+  display: flex;
+  align-items: center;
+
+  color: getColor('secondary-text');
+  text-decoration: none;
+
+  transition: color $timing-function-cubic;
+
+  &:hover,
+  &:focus {
+    color: getColor('accent');
+  }
+}
+
+.contacts__icon-mail,
+.contacts__icon-tell {
+  fill: currentColor;
+}

@@ -1,16 +1,25 @@
+// ------------- Футер
+//-------------- LOGO
 .footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
-  text-align: center;
+  padding: 60px 0px;
 
   background-color: #2f303a;
 
-  &__logo {
-    @extend %logo-style-text;
-    display: block;
+  &__block--position {
+    display: flex;
+    align-items: baseline;
+  }
 
+  &__block-contact {
+    margin-right: 70px;
+  }
+
+  &__logo {
+    display: inline-block;
     margin-bottom: 20px;
+    margin-right: 0;
+
+    @extend %logo-style-text;
 
     color: getColor('logo-invers');
   }
@@ -18,93 +27,94 @@
   &__accent-logo {
     color: getColor('accent');
   }
+}
 
-  // -------------- Контакты в подвале
-  &__locatyon {
-    margin-bottom: 8px;
+// -------------- Контакты в подвале
+.footer__locatyon {
+  margin-bottom: 9px;
 
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.5;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.5;
 
-    color: getColor('white-text');
-  }
+  color: getColor('white-text');
+}
 
-  .footer__contact-list:not(:last-child) {
-    margin-bottom: 8px;
-  }
+.footer__contact-list:not(:last-child) {
+  margin-bottom: 9px;
+}
 
-  &__mail,
-  &__tell {
-    text-decoration: none;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.5;
+.footer__mail,
+.footer__tell {
+  text-decoration: none;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.5;
 
-    color: getColor('contact-footer');
+  color: getColor('contact-footer');
 
-    transition: color $timing-function-cubic;
+  transition: color $timing-function-cubic;
 
-    &:focus,
-    &:hover {
-      color: getColor('accent');
-    }
+  &:focus,
+  &:hover {
+    color: getColor('accent');
   }
 }
 
 // ----------- Соцсети в подвале
 .social-media-footer {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-right: 94px;
 
   &__titel {
     margin-bottom: 20px;
 
     font-size: 14px;
-    line-height: 1.14;
+    line-height: 1.1;
     text-transform: uppercase;
     color: getColor('white-text');
   }
 
   &__network {
     display: flex;
-    justify-content: center;
   }
 
   &__network-list:not(:last-child) {
     margin-right: 10px;
   }
+}
 
-  &__more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social-media-footer__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
 
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 
-    transition: background-color $timing-function-cubic;
+  transition: background-color $timing-function-cubic;
 
-    &:hover,
-    &:focus {
-      background-color: getColor('accent');
-    }
+  &:hover,
+  &:focus {
+    background-color: getColor('accent');
   }
+}
 
-  &__icon {
-    fill: getColor('white-text');
-  }
+.social-media-footer__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: getColor('white-text');
 }
 
 // ------------ Подписка на рассылку
 .subscribe__titel {
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14;
+  line-height: 1.1;
   text-transform: uppercase;
 
   color: getColor('white-text');
@@ -113,18 +123,14 @@
 
 .subscribe__form {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .subscribe__input {
-  width: 100%;
+  width: 358px;
   height: 50px;
 
-  display: block;
-  margin-bottom: 20px;
-
-  padding-left: 16px;
+  margin-right: 12px;
+  padding-left: 18px;
 
   font-size: 16px;
   line-height: 1.25;
@@ -153,7 +159,7 @@
 
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.87;
+  line-height: 1.9;
   display: flex;
   align-items: center;
   text-align: center;
