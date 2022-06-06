@@ -1,6 +1,6 @@
 // ----------- Шапка сайта
 .header {
-  // position: relative;
+  position: relative;
   border-bottom: 1px solid rgba(236, 236, 236, 1);
 
   &__container {
@@ -51,18 +51,6 @@
 
     transition: fill $timing-function-cubic;
   }
-
-  &__icon-button--cross {
-    display: none;
-  }
-
-  &__batton.is-open .header__icon-button--cross {
-    display: block;
-  }
-
-  &__batton.is-open .header__icon-button--menu {
-    display: none;
-  }
 }
 
 // --------- Блок для мобильного меню
@@ -71,13 +59,14 @@
 
   position: absolute;
   z-index: 999;
-  top: 48px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100vh - 48px);
+  height: 100vh;
 
   overflow-y: scroll;
 
+  padding-top: 48px;
   padding-bottom: 48px;
   padding-left: 40px;
   padding-right: 40px;
@@ -88,6 +77,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  &__batton {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: none;
+
+    &:hover .menu-mobail__icon-button {
+      fill: getColor('accent');
+    }
+  }
+
+  &__icon-button {
+    transition: fill $timing-function-cubic;
   }
 }
 

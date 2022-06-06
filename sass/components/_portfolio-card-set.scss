@@ -1,0 +1,83 @@
+//  --------- Список проэктов
+.card-set__container {
+  margin-bottom: $card-set-gap;
+}
+
+.card-set__linck {
+  display: block;
+  text-decoration: none;
+
+  transition: box-shadow $timing-function-cubic;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 16%), 0px 0px 4px rgba(0, 0, 0, 6%);
+  }
+
+  &:hover .card-set__overlay,
+  &:focus .card-set__overlay {
+    transform: translateY(0);
+  }
+}
+
+.card-set__block-img {
+  @include positioning();
+
+  overflow: hidden;
+}
+
+.card-set__overlay {
+  content: '';
+  @include positioning(absolute);
+  display: flex;
+  align-items: center;
+
+  overflow: auto;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+
+  transition: transform $timing-function-cubic;
+
+  background: rgba(33, 150, 243, 0.9);
+}
+
+.card-set__description {
+  padding-left: 24px;
+  padding-right: 24px;
+
+  font-size: 18px;
+  line-height: 1.55;
+  color: getColor('white-text');
+}
+
+.card-set__box-name {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  border-right: 1px solid rgba(238, 238, 238, 1);
+  border-left: 1px solid rgba(238, 238, 238, 1);
+}
+
+.card-set__name {
+  margin-bottom: 4px;
+
+  text-align: start;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+
+  color: getColor('primary-text');
+}
+
+.card-set__product {
+  font-size: 16px;
+  line-height: 1.9;
+
+  color: getColor('secondary-text');
+}
