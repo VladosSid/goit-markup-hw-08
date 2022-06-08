@@ -61,7 +61,6 @@
 
   &--carrent {
     color: getColor('accent');
-    @include positioning();
   }
 
   &--carrent::after {

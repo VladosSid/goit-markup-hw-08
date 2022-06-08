@@ -1,16 +1,54 @@
 // ----------- Шапка сайта
 .header {
-  // position: relative;
   border-bottom: 1px solid rgba(236, 236, 236, 1);
 
-  &__container {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  @media screen and (max-width: 767px) {
+    position: relative;
   }
 
-  &__box-mobail {
-    display: flex;
-    justify-content: space-between;
+  &__container {
+    position: relative;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @media screen and (max-width: 767px) {
+      &.is-open {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        position: absolute;
+
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+
+        overflow-y: scroll;
+
+        padding-top: 48px;
+        padding-bottom: 48px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        background-color: getColor('global-bacground');
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .header__container.is-open .header__logo {
+    display: none;
   }
 
   &__logo {
@@ -23,13 +61,11 @@
     }
   }
 
-  &__box-mobail.is-open .header__logo {
-    visibility: hidden;
-  }
-
   // -------------- Кнопка Меню
-  &__batton {
-    position: relative;
+
+  &__batton-menu,
+  &__batton-cross {
+    padding: 0;
     width: 40px;
     height: 40px;
 
@@ -40,67 +76,72 @@
     &:hover .header__icon-button {
       fill: getColor('accent');
     }
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
   }
 
-  &__icon-button {
+  &__batton-menu {
     position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    transition: fill $timing-function-cubic;
+    top: 10px;
+    right: 15px;
   }
 
-  &__icon-button--cross {
+  &__container.is-open .header__batton-cross {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  &__batton-cross {
     display: none;
   }
 
-  &__batton.is-open .header__icon-button--cross {
+  &__container.is-open .header__batton-cross {
     display: block;
   }
 
-  &__batton.is-open .header__icon-button--menu {
+  &__container.is-open .header__batton-menu {
     display: none;
-  }
-}
-
-// --------- Блок для мобильного меню
-.menu-mobail {
-  display: none;
-
-  position: absolute;
-  z-index: 999;
-  top: 48px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 48px);
-
-  overflow-y: scroll;
-
-  padding-bottom: 48px;
-  padding-left: 40px;
-  padding-right: 40px;
-
-  background-color: getColor('global-bacground');
-
-  &.is-open {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }
 
 // --------- Навигация
+.navigation {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+  }
+}
+
+.header__container.is-open .navigation {
+  display: block;
+}
+
 .navigation__menu {
   font-weight: 500;
   font-size: 40px;
   line-height: 1.17;
   letter-spacing: 0.02em;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+
+    font-size: 14px;
+    line-height: 1.14;
+
+    :not(:last-child) {
+      margin-right: 50px;
+    }
+  }
 }
 
-.navigation__item:not(:last-child) {
-  margin-bottom: 32px;
+@media screen and (max-width: 767px) {
+  .navigation__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }
 
 .navigation__link {
@@ -117,25 +158,47 @@
   &--carrent {
     color: getColor('accent');
   }
-}
-// -------
-.contacts-mobail-box {
+
   @media screen and (min-width: $tablet) {
-    display: none;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    &--carrent {
+      @include positioning();
+    }
+
+    &--carrent::after {
+      content: '';
+      display: block;
+      @include positioning(absolute);
+
+      width: 100%;
+      height: 4px;
+      bottom: -1px;
+      right: 0;
+
+      border-radius: 4px;
+      background: getColor('accent');
+    }
   }
 }
-// ----------- Контакты
+
+// ----------- Контакты mobail ---------
 .contacts-mobail {
-  margin-bottom: 64px;
-  %all-style-contact {
-    color: getColor('secondary-text');
-    text-decoration: none;
+  display: none;
 
-    transition: color $timing-function-cubic;
+  &__list {
+    margin-bottom: 64px;
+    %all-style-contact {
+      color: getColor('secondary-text');
+      text-decoration: none;
 
-    &:hover,
-    &:focus {
-      color: getColor('accent');
+      transition: color $timing-function-cubic;
+
+      &:hover,
+      &:focus {
+        color: getColor('accent');
+      }
     }
   }
 
@@ -167,10 +230,8 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .contacts {
-    display: none;
-  }
+.header__container.is-open .contacts-mobail {
+  display: block;
 }
 
 // ----- Соцсети в мобильно меню -------
@@ -201,10 +262,59 @@
     margin-right: 10px;
     padding-right: 10px;
     border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+    @media screen and (max-width: 440px) and (min-width: 367px) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 367px) {
+    .social-network-menu__item:not(:nth-child(n + 3)) {
+      margin-bottom: 10px;
+    }
   }
 
   &__symbol {
     margin-left: 10px;
     margin-right: 10px;
+  }
+}
+
+// ---- Контакты для Таблетки и ПК
+@media screen and (max-width: 767px) {
+  .contacts {
+    display: none;
+  }
+}
+
+.contacts {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+
+  list-style-type: none;
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__mail,
+  &__tell {
+    display: flex;
+    align-items: center;
+    color: getColor('secondary-text');
+    text-decoration: none;
+
+    transition: color $timing-function-cubic;
+
+    &:hover,
+    &:focus {
+      color: getColor('accent');
+    }
+  }
+
+  &__icon-mail,
+  &__icon-tell {
+    fill: currentColor;
   }
 }
