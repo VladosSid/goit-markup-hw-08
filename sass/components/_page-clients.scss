@@ -14,33 +14,44 @@
     margin-right: $card-set-gap;
     margin-bottom: $card-set-gap;
   }
-}
 
-.client__logo-container {
-  display: flex;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  box-sizing: border-box;
+  &__logo-container {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  border: 1px solid getColor('icon-border');
-  border-radius: 4px;
+    border: 1px solid getColor('icon-border');
+    border-radius: 4px;
 
-  transition: border $timing-function-cubic;
+    transition: border $timing-function-cubic;
 
-  &:hover,
-  &:focus,
-  &:hover .clients__icon,
-  &:focus .clients__icon {
-    border-color: getColor('accent');
-    fill: getColor('accent');
+    &:hover,
+    &:focus,
+    &:hover .clients__icon,
+    &:focus .clients__icon {
+      border-color: getColor('accent');
+      fill: getColor('accent');
+    }
   }
-}
 
-.clients__icon {
-  fill: rgba(175, 177, 184, 1);
+  &__icon {
+    fill: rgba(175, 177, 184, 1);
 
-  transition: fill $timing-function-cubic;
+    transition: fill $timing-function-cubic;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__item {
+      flex-basis: calc(100% / 3 - $card-set-gap);
+      margin-right: $card-set-gap;
+      margin-bottom: $card-set-gap;
+    }
+
+    &__item {
+    }
+  }
 }

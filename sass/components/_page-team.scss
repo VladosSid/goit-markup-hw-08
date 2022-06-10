@@ -3,7 +3,9 @@
   background-color: #f5f4fa;
 
   &__card {
-    margin-bottom: $card-set-gap;
+    @media screen and (max-width: 767px) {
+      margin-bottom: $card-set-gap;
+    }
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -42,33 +44,60 @@
   &__social-network:not(:last-child) {
     margin-right: 10px;
   }
-}
 
-.team__socials-more {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  &__socials-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
 
-  background-color: getColor('white-text');
+    background-color: getColor('white-text');
 
-  transition: background-color $timing-function-cubic;
+    transition: background-color $timing-function-cubic;
 
-  &:hover,
-  &:focus {
-    background-color: getColor('accent');
+    &:hover,
+    &:focus {
+      background-color: getColor('accent');
+    }
+
+    &:hover .team__icon,
+    &:focus .team__icon {
+      fill: getColor('white-text');
+    }
   }
 
-  &:hover .team__icon,
-  &:focus .team__icon {
-    fill: getColor('white-text');
+  &__icon {
+    fill: getColor('icon-border');
+
+    transition: fill $timing-function-cubic;
   }
-}
 
-.team__icon {
-  fill: getColor('icon-border');
+  // ---- Стили для Таблетки ----------
+  @media screen and (min-width: $tablet) {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: calc(-1 * $card-set-gap);
+    }
 
-  transition: fill $timing-function-cubic;
+    &__card {
+      flex-basis: calc(100% / 2 - $card-set-gap);
+
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 0px 0px 4px 4px;
+
+      background-color: getColor('white-text');
+    }
+
+    &__card:nth-child(2n + 1) {
+      margin-right: $card-set-gap;
+    }
+
+    &__card:not(:nth-child(n + 3)) {
+      margin-bottom: $card-set-gap;
+    }
+  }
 }

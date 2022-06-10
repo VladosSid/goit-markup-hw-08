@@ -18,10 +18,14 @@
 
     color: getColor('white-text');
   }
+
   &__order-service {
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 32px;
+    padding-top: 10px;
+    padding-right: 31px;
+    padding-bottom: 10px;
+    padding-left: 31px;
     border: 1px solid #2196f3;
     border-radius: 4px;
 

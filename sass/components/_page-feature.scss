@@ -1,3 +1,4 @@
+// ------ Особенности
 .feature {
   @extend %section-mobail-tablet;
 
@@ -16,7 +17,7 @@
 
     font-weight: 700;
     font-size: 14px;
-    line-height: 1.1;
+    line-height: 1.14;
     text-align: center;
     text-transform: uppercase;
   }
@@ -25,6 +26,32 @@
     color: getColor('secondary-text');
 
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.71;
+  }
+
+  // ----- Стили для Таблетки
+  @media screen and (min-width: $tablet) {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      margin-right: calc(-1 * $card-set-gap);
+    }
+
+    &__items {
+      flex-basis: calc(100% / 2 - $card-set-gap);
+    }
+
+    &__items:nth-child(2n + 1) {
+      margin-right: $card-set-gap;
+    }
+
+    &__items:not(:nth-child(n + 3)) {
+      margin-bottom: $card-set-gap;
+    }
   }
 }
