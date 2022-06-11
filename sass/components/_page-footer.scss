@@ -1,6 +1,5 @@
 .footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  @extend %section-mobail-tablet;
 
   text-align: center;
 
@@ -48,6 +47,26 @@
     &:focus,
     &:hover {
       color: getColor('accent');
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__block--position {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__position-tablet {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+
+      margin-bottom: 60px;
+    }
+
+    &__block-contact {
+      margin-right: 165px;
     }
   }
 }
@@ -180,4 +199,10 @@
   margin-left: 10px;
 
   fill: getColor('white-text');
+}
+
+@media screen and (min-width: $tablet) {
+  .subscribe {
+    width: 450px;
+  }
 }

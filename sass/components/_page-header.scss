@@ -187,8 +187,22 @@
 .contacts-mobail {
   display: none;
 
+  @media screen and (max-width: 767px) {
+    &__item:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &__icon-tell,
+    &__icon-mail {
+      display: none;
+    }
+  }
+
   &__list {
-    margin-bottom: 64px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 64px;
+    }
+
     %all-style-contact {
       color: getColor('secondary-text');
       text-decoration: none;
@@ -200,10 +214,6 @@
         color: getColor('accent');
       }
     }
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 32px;
   }
 
   &__tell {
@@ -235,6 +245,7 @@
 }
 
 // ----- Соцсети в мобильно меню -------
+
 .social-network-menu {
   display: flex;
   flex-direction: row;
@@ -277,44 +288,40 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-}
 
-// ---- Контакты для Таблетки и ПК
-@media screen and (max-width: 767px) {
-  .contacts {
+  @media screen and (min-width: $tablet) {
     display: none;
   }
 }
 
-.contacts {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.02em;
+// ---- Контакты для Таблетки и ПК
+@media screen and (min-width: $tablet) {
+  .contacts-mobail {
+    display: block;
 
-  list-style-type: none;
-
-  &__item:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
-  &__mail,
-  &__tell {
-    display: flex;
-    align-items: center;
-    color: getColor('secondary-text');
-    text-decoration: none;
-
-    transition: color $timing-function-cubic;
-
-    &:hover,
-    &:focus {
-      color: getColor('accent');
+    &__list {
+      display: flex;
+      flex-direction: column-reverse;
     }
-  }
 
-  &__icon-mail,
-  &__icon-tell {
-    fill: currentColor;
+    &__item:last-child {
+      margin-bottom: 10px;
+    }
+
+    &__mail,
+    &__tell {
+      display: flex;
+      align-items: center;
+
+      font-size: 14px;
+      line-height: 1.16;
+
+      transition: color $timing-function-cubic;
+    }
+
+    &__icon-mail,
+    &__icon-tell {
+      fill: currentColor;
+    }
   }
 }

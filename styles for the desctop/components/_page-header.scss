@@ -99,3 +99,55 @@
 .contacts__icon-tell {
   fill: currentColor;
 }
+
+======================= {
+}
+
+.contacts-mobail {
+  display: none;
+
+  &__list {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 64px;
+    }
+
+    %all-style-contact {
+      color: getColor('secondary-text');
+      text-decoration: none;
+
+      transition: color $timing-function-cubic;
+
+      &:hover,
+      &:focus {
+        color: getColor('accent');
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__tell {
+    @extend %all-style-contact;
+    display: block;
+
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    list-style-type: none;
+  }
+
+  &__mail {
+    @extend %all-style-contact;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+
+    list-style-type: none;
+  }
+}
