@@ -10,9 +10,11 @@
 .form__label {
   @include positioning();
 
-  &:hover .form__name,
-  &:focus .form__name {
-    color: getColor('accent');
+  @media screen and (max-width: 767px) {
+    &:hover .form__name,
+    &:focus .form__name {
+      color: getColor('accent');
+    }
   }
   &:not(:last-child) {
     margin-bottom: 10px;
@@ -50,9 +52,11 @@
     outline: none;
   }
 
-  &:hover .form__name,
-  &:focus .form__name {
-    color: getColor('accent');
+  @media screen and (max-width: 767px) {
+    &:hover .form__name,
+    &:focus .form__name {
+      color: getColor('accent');
+    }
   }
 
   &:hover + .form__icon,
@@ -86,7 +90,8 @@
 
   transition: border $timing-function-cubic;
 
-  &:focus {
+  &:focus,
+  &:hover {
     border: 1px solid getColor('accent');
     outline: none;
   }
@@ -139,7 +144,7 @@
   width: 16px;
   height: 15px;
 
-  margin-right: 8px;
+  margin-right: 6px;
 
   border: 2px solid getColor('primery-text');
   border-radius: 2px;
@@ -148,7 +153,7 @@
 }
 
 .form__modal-treaty {
-  margin-left: 4px;
+  margin-left: 2px;
 
   text-decoration: none;
 

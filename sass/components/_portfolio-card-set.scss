@@ -81,3 +81,19 @@
 
   color: getColor('secondary-text');
 }
+
+@media screen and (min-width: $tablet) {
+  .card-set {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-right: calc(-1 * $card-set-gap);
+    margin-bottom: calc(-1 * $card-set-gap);
+
+    &__container {
+      flex-basis: calc(100% / 2 - $card-set-gap);
+      margin-right: $card-set-gap;
+      margin-bottom: $card-set-gap;
+    }
+  }
+}

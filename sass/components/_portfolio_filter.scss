@@ -7,15 +7,18 @@
 //  --------- Фильтр
 .portfolio__filter {
   display: flex;
-  flex-wrap: wrap;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+
+    &-button:not(:nth-child(n + 4)) {
+      margin-bottom: 15px;
+    }
+  }
+
   margin-bottom: 40px;
 
   &-button:not(:last-child) {
     margin-right: 8px;
-  }
-
-  &-button:not(:nth-child(n + 4)) {
-    margin-bottom: 15px;
   }
 }
 
@@ -51,6 +54,16 @@
 
     color: getColor('white-text');
     background-color: getColor('accent');
+
     cursor: pointer;
+  }
+}
+
+// -------- Стили для таблетки
+@media screen and (min-width: $tablet) {
+  .portfolio__filter {
+    justify-content: center;
+
+    margin-bottom: 30px;
   }
 }

@@ -23,8 +23,7 @@
   <body>
     <!--Шапка сайта с меню и контактами-->
     <header class="header">
-      <div class="header__container container js-menu-container" id="menu-container">
-        <!-- <div class="header__logo-batton"> -->
+      <div class="header__container container" id="menu-container">
         <a href="" class="header__logo padding-list">
           <span class="header__logo-accent">Web</span>Studio
         </a>
@@ -44,7 +43,6 @@
             <use href="./images/cross-menu_mobail.svg#icon-menu"></use>
           </svg>
         </button>
-        <!-- </div> -->
 
         <!-- ----------- Кнопка закрытия меню --------- -->
         <button type="button" class="header__batton-cross js-close-menu">
@@ -74,15 +72,33 @@
           </ul>
         </nav>
 
-        <!-- Коробка для контактов мобильной версии -->
+        <!-- Коробка для контактов -->
         <div class="contacts-mobail">
-          <!--Контакты mobail-->
+          <!--Контакты -->
           <ul class="contacts-mobail__list padding-list">
             <li class="contacts-mobail__item">
-              <a href="tel:+380961111111" class="contacts-mobail__tell"> +38 096 111 11 11 </a>
+              <a href="tel:+380961111111" class="contacts-mobail__tell">
+                <svg
+                  width="11"
+                  height="16"
+                  style="margin-right: 10px"
+                  class="contacts-mobail__icon-tell"
+                >
+                  <use href="./images/symbol-defs.svg#tell" width="11px" height="16px"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
             </li>
             <li class="contacts-mobail__item">
               <a href="mailto:info@devstudio.com" class="contacts-mobail__mail">
+                <svg
+                  width="16"
+                  height="14"
+                  style="margin-right: 10px"
+                  class="contacts-mobail__icon-mail"
+                >
+                  <use href="./images/symbol-defs.svg#mail" width="16px" height="14px"></use>
+                </svg>
                 info@devstudio.com
               </a>
             </li>
@@ -104,26 +120,6 @@
             </li>
           </ul>
         </div>
-
-        <!--Контакты Таблетка и ПК-->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a href="mailto:info@devstudio.com" class="contacts__mail">
-              <svg width="16" height="14" style="margin-right: 10px" class="contacts__icon-mail">
-                <use href="./images/symbol-defs.svg#mail" width="16px" height="14px"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contacts__item">
-            <a href="tel:+380961111111" class="contacts__tell">
-              <svg width="11" height="16" style="margin-right: 10px" class="contacts__icon-tell">
-                <use href="./images/symbol-defs.svg#tell" width="11px" height="16px"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
       </div>
     </header>
     <!-- Тело сайта -->

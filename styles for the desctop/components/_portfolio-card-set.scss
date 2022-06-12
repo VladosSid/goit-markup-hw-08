@@ -58,19 +58,19 @@
   padding: 0 24px;
 
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: getColor('white-text');
 }
 
 .card-set__box-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
   padding: 20px 24px;
 
   border-bottom: 1px solid rgba(238, 238, 238, 1);
   border-right: 1px solid rgba(238, 238, 238, 1);
-  border-left: 1px solid rgba(238, 238, 238, 1);
+  border-left: 1px solid rgb(224, 152, 152);
 }
 
 .card-set__name {
