@@ -45,10 +45,17 @@
       padding-top: 20px;
       padding-bottom: 20px;
     }
-  }
 
-  .header__container.is-open .header__logo {
-    display: none;
+    @media screen and (min-width: $desktop) {
+      padding-top: 24px;
+      padding-bottom: 25px;
+    }
+
+    @media screen and (max-width: 767px) {
+      &.is-open .header__logo {
+        display: none;
+      }
+    }
   }
 
   &__logo {
@@ -58,6 +65,10 @@
 
     &-accent {
       color: getColor('accent');
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: none;
     }
   }
 
@@ -114,10 +125,16 @@
   @media screen and (min-width: $tablet) {
     display: block;
   }
+
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
 }
 
-.header__container.is-open .navigation {
-  display: block;
+@media screen and (max-width: 767px) {
+  .header__container.is-open .navigation {
+    display: block;
+  }
 }
 
 .navigation__menu {
@@ -183,9 +200,46 @@
   }
 }
 
+.header__nav-pc {
+  display: none;
+}
+
+// ------- навигация и лого для PC
+@media screen and (min-width: $desktop) {
+  .header__nav-pc {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .header__logo-pc {
+    margin-right: 93px;
+
+    font-family: $fontLogo;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.16;
+    text-decoration: none;
+
+    font-size: 26px;
+    line-height: 1.19;
+
+    color: getColor('logo');
+
+    &-accent {
+      color: getColor('accent');
+    }
+  }
+}
+
 // ----------- Контакты mobail ---------
 .contacts-mobail {
   display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+  }
 
   @media screen and (max-width: 767px) {
     &__item:not(:last-child) {
@@ -198,9 +252,30 @@
     }
   }
 
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    &__item:last-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__item:last-child {
+      margin-right: $card-set-gap;
+    }
+  }
+
   &__list {
     @media screen and (max-width: 767px) {
       margin-bottom: 64px;
+    }
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @media screen and (min-width: $desktop) {
+      flex-direction: row-reverse;
+      align-items: center;
     }
 
     %all-style-contact {
@@ -237,6 +312,26 @@
     letter-spacing: 0.02em;
 
     list-style-type: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__mail,
+    &__tell {
+      display: flex;
+      align-items: center;
+
+      font-size: 14px;
+      line-height: 1.16;
+
+      transition: color $timing-function-cubic;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__icon-mail,
+    &__icon-tell {
+      fill: currentColor;
+    }
   }
 }
 
@@ -291,37 +386,5 @@
 
   @media screen and (min-width: $tablet) {
     display: none;
-  }
-}
-
-// ---- Контакты для Таблетки и ПК
-@media screen and (min-width: $tablet) {
-  .contacts-mobail {
-    display: block;
-
-    &__list {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-
-    &__item:last-child {
-      margin-bottom: 10px;
-    }
-
-    &__mail,
-    &__tell {
-      display: flex;
-      align-items: center;
-
-      font-size: 14px;
-      line-height: 1.16;
-
-      transition: color $timing-function-cubic;
-    }
-
-    &__icon-mail,
-    &__icon-tell {
-      fill: currentColor;
-    }
   }
 }
