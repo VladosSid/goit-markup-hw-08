@@ -1,5 +1,4 @@
 .team {
-  @extend %section-mobail-tablet;
   background-color: #f5f4fa;
 
   &__card {
@@ -78,12 +77,17 @@
   @media screen and (min-width: $tablet) {
     &__list {
       display: flex;
-      flex-wrap: wrap;
-      margin-right: calc(-1 * $card-set-gap);
+      @media screen and (max-width: 1199px) {
+        flex-wrap: wrap;
+        margin: calc(-1 * 15px);
+      }
     }
 
     &__card {
-      flex-basis: calc(100% / 2 - $card-set-gap);
+      @media screen and (max-width: 1199px) {
+        flex-basis: calc((100% - 4 * 15px) / 2);
+        margin: 15px;
+      }
 
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -92,12 +96,16 @@
       background-color: getColor('white-text');
     }
 
-    &__card:nth-child(2n + 1) {
-      margin-right: $card-set-gap;
-    }
+    // ---- Стили для Desktop ----------
+    @media screen and (min-width: $desktop) {
+      &__list {
+        margin-right: calc(-1 * $card-set-gap);
+      }
 
-    &__card:not(:nth-child(n + 3)) {
-      margin-bottom: $card-set-gap;
+      &__card {
+        flex-basis: calc(100% / 4 - $card-set-gap);
+        margin-right: $card-set-gap;
+      }
     }
   }
 }

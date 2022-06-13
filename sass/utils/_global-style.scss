@@ -40,14 +40,14 @@ p {
 }
 
 // ------ ГЛОБАЛЬНЫЕ ПАДИНГИ ДЛЯ СЕКЦИЙ плейсхолдер
-%section-mobail-tablet {
+.section {
   padding-top: 60px;
   padding-bottom: 60px;
-}
 
-%section-desktop {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .title-style {

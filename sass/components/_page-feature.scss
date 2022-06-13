@@ -1,11 +1,20 @@
 // ------ Особенности
 .feature {
-  @extend %section-mobail-tablet;
+  padding-top: 60px;
+
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+  }
 
   &__container-icon {
     display: flex;
     justify-content: center;
     margin-bottom: $card-set-gap;
+
     padding-top: 25px;
     padding-bottom: 25px;
 
@@ -18,7 +27,10 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
-    text-align: center;
+    @media screen and (max-width: $desktop) {
+      text-align: center;
+    }
+
     text-transform: uppercase;
   }
 
@@ -33,25 +45,37 @@
   @media screen and (min-width: $tablet) {
     &__list {
       display: flex;
-      flex-wrap: wrap;
-
-      padding: 0;
-      margin: 0;
+      @media screen and (max-width: $desktop) {
+        flex-wrap: wrap;
+      }
       list-style: none;
 
-      margin-right: calc(-1 * $card-set-gap);
+      margin: calc(-1 * 15px);
     }
 
     &__items {
-      flex-basis: calc(100% / 2 - $card-set-gap);
+      flex-basis: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+  }
+
+  // ----- Стили для Desktop
+  @media screen and (min-width: $desktop) {
+    &__list {
+      display: flex;
+      list-style: none;
+
+      margin: calc(-1 * 15px);
     }
 
-    &__items:nth-child(2n + 1) {
-      margin-right: $card-set-gap;
+    &__items {
+      flex-basis: calc((100% - 2 * 15px) / 4);
+      margin: 15px;
     }
 
-    &__items:not(:nth-child(n + 3)) {
-      margin-bottom: $card-set-gap;
+    &__container-icon {
+      padding-left: 100px;
+      padding-right: 100px;
     }
   }
 }
