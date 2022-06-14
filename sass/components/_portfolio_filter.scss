@@ -1,8 +1,5 @@
 //  --------- Стилизация Портфолио
 //  --------- Тело сайта
-.portfolio {
-  // @extend %section-mobail-tablet;
-}
 
 //  --------- Фильтр
 .portfolio__filter {
@@ -19,6 +16,18 @@
 
   &-button:not(:last-child) {
     margin-right: 8px;
+  }
+
+  // -------- Tablet
+  @media screen and (min-width: $tablet) {
+    justify-content: center;
+
+    margin-bottom: 30px;
+  }
+
+  // ------ Desktop
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 34px;
   }
 }
 
@@ -56,14 +65,5 @@
     background-color: getColor('accent');
 
     cursor: pointer;
-  }
-}
-
-// -------- Стили для таблетки
-@media screen and (min-width: $tablet) {
-  .portfolio__filter {
-    justify-content: center;
-
-    margin-bottom: 30px;
   }
 }

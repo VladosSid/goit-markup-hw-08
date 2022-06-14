@@ -1008,6 +1008,23 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
+@media screen and (min-width: 768px) {
+  .backdrop__modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 609px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .backdrop__modal {
+    padding: 40px;
+    width: 528px;
+    height: 581px;
+  }
+}
 .backdrop__button-close {
   display: flex;
   align-items: center;
@@ -1040,16 +1057,6 @@ p {
   color: #212121;
 }
 
-@media screen and (min-width: 768px) {
-  .backdrop__modal {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 450px;
-    height: 609px;
-  }
-}
 .form__block-user-data {
   display: flex;
   flex-direction: column;
@@ -1134,6 +1141,12 @@ p {
   font-size: 12px;
   line-height: 1.16;
   color: #757575;
+}
+@media screen and (min-width: 1200px) {
+  .form__check-label {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .form__check-modal {
@@ -1224,6 +1237,17 @@ p {
 .portfolio__filter-button:not(:last-child) {
   margin-right: 8px;
 }
+@media screen and (min-width: 768px) {
+  .portfolio__filter {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__filter {
+    margin-bottom: 34px;
+  }
+}
 
 .portfolio__button {
   padding: 6px 22px;
@@ -1249,15 +1273,18 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  .portfolio__filter {
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-}
-@media screen and (min-width: 768px) {
   .card-set {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .card-set {
+    margin: -15px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .card-set {
     margin-right: -30px;
     margin-bottom: -30px;
   }
@@ -1267,16 +1294,21 @@ p {
 }
 @media screen and (min-width: 768px) {
   .card-set__container {
-    margin-bottom: 30px;
+    flex-basis: calc((100% - 60px) / 2);
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .card-set__container {
-    flex-basis: calc((100% - 60px) / 2);
     margin: 15px;
   }
 }
-
+@media screen and (min-width: 1200px) {
+  .card-set__container {
+    flex-basis: calc(33.3333333333% - 30px);
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}
 .card-set__linck {
   display: block;
   text-decoration: none;
@@ -1295,12 +1327,10 @@ p {
     height: 100%;
   }
 }
-
 .card-set__block-img {
   position: relative;
   overflow: hidden;
 }
-
 .card-set__overlay {
   content: "";
   position: absolute;
@@ -1315,7 +1345,6 @@ p {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(33, 150, 243, 0.9);
 }
-
 .card-set__description {
   padding-left: 24px;
   padding-right: 24px;
@@ -1323,7 +1352,6 @@ p {
   line-height: 1.55;
   color: #ffffff;
 }
-
 .card-set__box-name {
   padding: 20px 24px;
   border-bottom: 1px solid rgb(238, 238, 238);
@@ -1335,7 +1363,6 @@ p {
     flex-grow: 1;
   }
 }
-
 .card-set__name {
   margin-bottom: 4px;
   text-align: start;
@@ -1345,7 +1372,6 @@ p {
   letter-spacing: 0.06em;
   color: #212121;
 }
-
 .card-set__product {
   font-size: 16px;
   line-height: 1.9;

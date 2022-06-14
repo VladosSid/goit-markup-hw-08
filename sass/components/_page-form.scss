@@ -110,6 +110,11 @@
   line-height: 1.16;
 
   color: getColor('secondary-text');
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .form__check-modal {
