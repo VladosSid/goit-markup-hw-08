@@ -95,7 +95,7 @@
           <!--Контакты -->
           <ul class="contacts-mobail__list padding-list">
             <li class="contacts-mobail__item">
-              <a href="tel:+380961111111" class="contacts-mobail__tell">
+              <a href="tel:+380961111111" class="contacts-mobail__tell contacts-mobail__tell-color">
                 <svg
                   style="margin-right: 10px"
                   width="11px"
@@ -264,7 +264,8 @@
               <h3 class="services__labl">Мобильные приложения</h3>
             </li>
             <li class="services__item">
-              <source
+              <picture>
+                <source
                   srcset="
                     ./images/color.webp    1x,
                     ./images/color@2x.webp 2x,
@@ -274,17 +275,13 @@
                 />
 
                 <img
-                  srcset="
-                    ./images/color.jpg    1x,
-                    ./images/color@2x.jpg 2x,
-                    ./images/color@3x.jpg 3x
-                  "
+                  srcset="./images/color.jpg 1x, ./images/color@2x.jpg 2x, ./images/color@3x.jpg 3x"
                   src="./images/color.jpg"
                   alt="Процес создания"
                   class="img-position"
                 />
               </picture>
-              
+
               <h3 class="services__labl">Дизайнерские решения</h3>
             </li>
           </ul>

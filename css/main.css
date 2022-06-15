@@ -372,6 +372,14 @@ p {
   letter-spacing: 0.02em;
   list-style-type: none;
 }
+@media screen and (max-width: 767px) {
+  .contacts-mobail .contacts-mobail__tell.contacts-mobail__tell-color {
+    color: #2196f3;
+  }
+  .contacts-mobail .contacts-mobail__tell.contacts-mobail__tell-color:hover, .contacts-mobail .contacts-mobail__tell.contacts-mobail__tell-color:focus {
+    color: #188ce8;
+  }
+}
 .contacts-mobail__mail {
   font-weight: 500;
   font-size: 24px;
@@ -580,6 +588,11 @@ p {
   color: #757575;
   font-size: 14px;
   line-height: 1.71;
+}
+@media screen and (max-width: 767px) {
+  .feature__items:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 @media screen and (min-width: 768px) {
   .feature__list {

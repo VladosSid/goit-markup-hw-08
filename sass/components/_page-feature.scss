@@ -41,6 +41,12 @@
     line-height: 1.71;
   }
 
+  @media screen and (max-width: 767px) {
+    &__items:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
   // ----- Стили для Таблетки
   @media screen and (min-width: $tablet) {
     &__list {

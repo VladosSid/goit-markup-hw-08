@@ -293,6 +293,7 @@
 
   &__tell {
     @extend %all-style-contact;
+
     display: block;
 
     font-weight: 500;
@@ -301,6 +302,17 @@
     letter-spacing: 0.02em;
 
     list-style-type: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    & .contacts-mobail__tell.contacts-mobail__tell-color {
+      color: getColor('accent');
+
+      &:hover,
+      &:focus {
+        color: #188ce8;
+      }
+    }
   }
 
   &__mail {
