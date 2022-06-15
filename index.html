@@ -95,7 +95,7 @@
           <!--Контакты -->
           <ul class="contacts-mobail__list padding-list">
             <li class="contacts-mobail__item">
-              <a href="tel:+380961111111" width="11" height="16" class="contacts-mobail__tell">
+              <a href="tel:+380961111111" class="contacts-mobail__tell">
                 <svg
                   style="margin-right: 10px"
                   width="11px"
@@ -213,16 +213,78 @@
           <h2 class="title-style">Чем мы занимаемся</h2>
           <ul class="services__list padding-list">
             <li class="services__item">
-              <img src="./images/process.jpg" alt="Процес создания" class="img-position" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/process.webp    1x,
+                    ./images/process@2x.webp 2x,
+                    ./images/process@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/process.jpg    1x,
+                    ./images/process@2x.jpg 2x,
+                    ./images/process@3x.jpg 3x
+                  "
+                  src="./images/process.jpg"
+                  alt="Процес создания"
+                  class="img-position"
+                />
+              </picture>
+
               <h3 class="services__labl">Десктопные приложения</h3>
             </li>
 
             <li class="services__item">
-              <img src="./images/comparison.jpg" alt="Выбор дизайна" class="img-position" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/comparison.webp    1x,
+                    ./images/comparison@2x.webp 2x,
+                    ./images/comparison@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/comparison.jpg    1x,
+                    ./images/comparison@2x.jpg 2x,
+                    ./images/comparison@3x.jpg 3x
+                  "
+                  src="./images/comparison.jpg"
+                  alt="Процес создания"
+                  class="img-position"
+                />
+              </picture>
+
               <h3 class="services__labl">Мобильные приложения</h3>
             </li>
             <li class="services__item">
-              <img src="./images/color.jpg" alt="Наполнение цветом" class="img-position" />
+              <source
+                  srcset="
+                    ./images/color.webp    1x,
+                    ./images/color@2x.webp 2x,
+                    ./images/color@3x.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/color.jpg    1x,
+                    ./images/color@2x.jpg 2x,
+                    ./images/color@3x.jpg 3x
+                  "
+                  src="./images/color.jpg"
+                  alt="Процес создания"
+                  class="img-position"
+                />
+              </picture>
+              
               <h3 class="services__labl">Дизайнерские решения</h3>
             </li>
           </ul>
