@@ -295,7 +295,29 @@
 
           <ul class="team__list padding-list">
             <li class="team__card">
-              <img src="./images/igor.jpg" alt="Игорь Демьяненко" class="img-position" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/igor.webp     450w,
+                    ./images/igor@2x.webp  900w,
+                    ./images/igor@3x.webp 1350w
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/igor.jpg     450w,
+                    ./images/igor@2x.jpg  900w,
+                    ./images/igor@3x.jpg 1350w
+                  "
+                  sizes="(min-width: 1200px) 25vw, (min-width: 767px) 50vw, 100vw"
+                  src="./images/igor.jpg"
+                  alt="Игорь Демьяненко"
+                  class="img-position"
+                />
+              </picture>
+
               <div class="team__block-description">
                 <h3 class="team__name">Игорь Демьяненко</h3>
                 <p lang="en" class="team__profesion">Product Designer</p>
@@ -333,7 +355,29 @@
             </li>
 
             <li class="team__card">
-              <img src="./images/olga.jpg" alt="Ольга Репина" class="photo-team img-position" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/olga.webp     450w,
+                    ./images/olga@2x.webp  900w,
+                    ./images/olga@3x.webp 1350w
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/olga.jpg     450w,
+                    ./images/olga@2x.jpg  900w,
+                    ./images/olga@3x.jpg 1350w
+                  "
+                  sizes="(min-width: 1200px) 25vw, (min-width: 767px) 50vw, 100vw"
+                  src="./images/olga.jpg"
+                  alt="Ольга Репина"
+                  class="img-position"
+                />
+              </picture>
+
               <div class="team__block-description">
                 <h3 class="team__name">Ольга Репина</h3>
                 <p lang="en" class="team__profesion">Frontend Developer</p>
@@ -371,11 +415,29 @@
             </li>
 
             <li class="team__card">
-              <img
-                src="./images/nykolay.jpg"
-                alt="Николай Тарасов"
-                class="photo-team img-position"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/nykolay.webp     450w,
+                    ./images/nykolay@2x.webp  900w,
+                    ./images/nykolay@3x.webp 1350w
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/nykolay.jpg     450w,
+                    ./images/nykolay@2x.jpg  900w,
+                    ./images/nykolay@3x.jpg 1350w
+                  "
+                  sizes="(min-width: 1200px) 25vw, (min-width: 767px) 50vw, 100vw"
+                  src="./images/nykolay.jpg"
+                  alt="Николай Тарасов"
+                  class="img-position"
+                />
+              </picture>
+
               <div class="team__block-description">
                 <h3 class="team__name">Николай Тарасов</h3>
                 <p lang="en" class="team__profesion">Marketing</p>
@@ -413,7 +475,29 @@
             </li>
 
             <li class="team__card">
-              <img src="./images/myhayl.jpg" alt="Михаил Ермаков" class="photo-team img-position" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/myhayl.webp     450w,
+                    ./images/myhayl@2x.webp  900w,
+                    ./images/myhayl@3x.webp 1350w
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  srcset="
+                    ./images/myhayl.jpg     450w,
+                    ./images/myhayl@2x.jpg  900w,
+                    ./images/myhayl@3x.jpg 1350w
+                  "
+                  sizes="(min-width: 1200px) 25vw, (min-width: 767px) 50vw, 100vw"
+                  src="./images/myhayl.jpg"
+                  alt="Михаил Ермаков"
+                  class="img-position"
+                />
+              </picture>
+
               <div class="team__block-description">
                 <h3 class="team__name">Михаил Ермаков</h3>
                 <p lang="en" class="team__profesion">UI Designer</p>

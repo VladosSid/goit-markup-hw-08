@@ -37,7 +37,6 @@
 }
 
 .card-set__overlay {
-  content: '';
   @include positioning(absolute);
   display: flex;
   align-items: center;
@@ -63,9 +62,6 @@
 }
 
 .card-set__box-name {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
   padding: 20px 24px;
 
   border-bottom: 1px solid rgba(238, 238, 238, 1);
