@@ -490,8 +490,6 @@ p {
 @media screen and (min-width: 768px) {
   .primery {
     max-width: 1600px;
-    padding-top: 200px;
-    padding-bottom: 200px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bgi-header-desktop.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -507,6 +505,12 @@ p {
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 3), screen and (min-width: 768px) and (min-resolution: 288dpi), screen and (min-width: 768px) and (min-resolution: 3dppx) {
   .primery {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/bgi-header-desktop@3x.jpg");
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .primery {
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 }
 .primery__text {
@@ -670,7 +674,7 @@ p {
   background-color: #ffffff;
 }
 @media screen and (max-width: 767px) {
-  .team__card {
+  .team__card:not(:last-child) {
     margin-bottom: 30px;
   }
 }
@@ -873,6 +877,7 @@ p {
 @media screen and (min-width: 1200px) {
   .footer__block--position {
     align-items: baseline;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 768px) {
@@ -901,7 +906,7 @@ p {
 .social-media-footer {
   margin-bottom: 60px;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .social-media-footer {
     margin-top: 60px;
   }
@@ -1062,7 +1067,7 @@ p {
   height: 100%;
   overflow: auto;
   padding: 40px;
-  width: 450px;
+  width: 80vw;
   height: 609px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);

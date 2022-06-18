@@ -3,7 +3,9 @@
 
   &__card {
     @media screen and (max-width: 767px) {
-      margin-bottom: $card-set-gap;
+      &:not(:last-child) {
+        margin-bottom: $card-set-gap;
+      }
     }
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),

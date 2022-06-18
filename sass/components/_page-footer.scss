@@ -74,6 +74,7 @@
 
     @media screen and (min-width: $desktop) {
       align-items: baseline;
+      justify-content: space-between;
     }
   }
 
@@ -102,7 +103,7 @@
 
 // ----------- Соцсети в подвале
 .social-media-footer {
-  @media screen and (max-width: 1199px) {
+  @media screen and (max-width: 767px) {
     margin-top: 60px;
   }
 
